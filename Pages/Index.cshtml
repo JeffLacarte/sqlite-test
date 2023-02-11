@@ -1,0 +1,19 @@
+﻿@page
+@model IndexModel
+@using Models
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+<div>
+    <ul>
+        @foreach(AccessLog a in @Model.AccessLogs)
+        {
+            <li>@a.AccessedOn.ToString("MMM dd yyyy @d hh:mm:ss tt")</li>
+        }
+    </ul>
+</div>
